@@ -10,29 +10,29 @@ import { inicializarIconosLucide } from '../../comun/lucide';
   imports: [CommonModule, RouterLink, RouterLinkActive],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <!-- Barra Superior Flotante Tipo Pill Corporativa (Especificación Exacta GADU) -->
-    <header class="sticky top-4 sm:top-6 lg:top-7 z-50 w-full px-3 sm:px-6 lg:px-8 transition-all duration-200 no-print print:hidden">
-      <div class="max-w-[1360px] mx-auto bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full border border-slate-200/90 shadow-lg shadow-slate-200/50 px-4 sm:px-6 lg:px-7 py-3 sm:py-3.5 flex items-center justify-between gap-3">
+    <!-- Barra Superior Flotante Tipo Pill Corporativa (Totalmente Responsiva: Móvil, Tablet / iPad y Desktop) -->
+    <header class="sticky top-3 sm:top-5 lg:top-7 z-50 w-full px-2.5 sm:px-6 lg:px-8 transition-all duration-200 no-print print:hidden">
+      <div class="max-w-[1360px] mx-auto bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full border border-slate-200/90 shadow-lg shadow-slate-200/50 px-3.5 sm:px-6 lg:px-7 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 sm:gap-3">
         
         <!-- ======================================================================= -->
-        <!-- 3. BLOQUE IZQUIERDO: LOGOTIPO CORPORATIVO                               -->
+        <!-- 1. BLOQUE IZQUIERDO: LOGOTIPO CORPORATIVO                               -->
         <!-- ======================================================================= -->
         <div class="flex items-center shrink-0">
           <a routerLink="/" class="flex items-center group py-0.5 select-none">
             <img 
               src="assets/logos/GADUCompany.png" 
               alt="GADU Company S.A." 
-              class="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              class="h-8 sm:h-9 lg:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               onerror="this.src='favicon.ico'"
             />
           </a>
 
-          <!-- Separador vertical -->
-          <div class="h-7 sm:h-8 w-px bg-slate-200 ml-4 mr-2 hidden xl:block"></div>
+          <!-- Separador vertical (visible en pantallas amplias) -->
+          <div class="h-7 sm:h-8 w-px bg-slate-200 ml-3 mr-2 sm:ml-4 sm:mr-2 hidden xl:block"></div>
         </div>
 
         <!-- ======================================================================= -->
-        <!-- 4. BLOQUE CENTRAL: NAVEGACIÓN DE ESCRITORIO                             -->
+        <!-- 2. BLOQUE CENTRAL: NAVEGACIÓN DE ESCRITORIO (>= 1024px)                 -->
         <!-- ======================================================================= -->
         <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
           
@@ -180,69 +180,53 @@ import { inicializarIconosLucide } from '../../comun/lucide';
         </nav>
 
         <!-- ======================================================================= -->
-        <!-- 5. BLOQUE DERECHO: ACCIONES Y BOTONES                                   -->
+        <!-- 3. BLOQUE DERECHO: ACCIONES Y CONTROLES RESPONSIVOS                    -->
         <!-- ======================================================================= -->
-        <div class="hidden md:flex items-center gap-2 xl:gap-3 shrink-0">
+        <div class="flex items-center gap-1.5 sm:gap-2 xl:gap-3 shrink-0">
           
-          <!-- Píldora Esmeralda (GADU App - Tienda Virtual) -->
+          <!-- Píldora Esmeralda (GADU App) - Visible en Tablets y Desktop (>= 768px) -->
           <a 
             href="https://www.gaduapp.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="border border-emerald-300/80 bg-emerald-50/50 hover:bg-emerald-100/60 transition-all rounded-full px-3.5 sm:px-4 py-2 flex items-center gap-2 shadow-2xs group cursor-pointer"
+            class="hidden md:flex border border-emerald-300/80 bg-emerald-50/50 hover:bg-emerald-100/60 transition-all rounded-full px-3 sm:px-3.5 lg:px-4 py-1.5 sm:py-2 items-center gap-1.5 sm:gap-2 shadow-2xs group cursor-pointer"
             title="Ir a Tienda Virtual GADU App (www.gaduapp.com)"
           >
             <i data-lucide="shopping-cart" class="w-4 h-4 text-emerald-600 transition-transform group-hover:scale-110"></i>
             <span class="text-xs sm:text-sm font-bold text-slate-800">GADU App</span>
-            <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-200/60">Tienda Virtual</span>
+            <span class="hidden xl:inline-block bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-200/60">Tienda Virtual</span>
           </a>
 
-          <!-- Botón Secundario (Intranet) -->
+          <!-- Botón Secundario (Intranet) - Visible en Desktop Amplio (>= 1024px) -->
           <a 
             href="https://www.gaducompany.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-slate-700 hover:text-slate-900 hover:bg-slate-100 text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
+            class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-slate-700 hover:text-slate-900 hover:bg-slate-100 text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
             title="Acceso Colaboradores e Intranet"
           >
             <i data-lucide="lock" class="w-4 h-4 text-slate-500"></i>
             <span>Intranet</span>
           </a>
 
-          <!-- Botón Primario CTA (Cotizar) -->
+          <!-- Botón Primario CTA (Cotizar) - Visible en Móviles, Tablets y Desktop -->
           <a 
             href="https://www.gaducompany.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="bg-[#0078D4] hover:bg-[#0062AD] text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full flex items-center gap-1.5 shadow-sm shadow-blue-500/20 hover:shadow-md hover:shadow-blue-500/30 transition-all cursor-pointer"
+            class="bg-[#0078D4] hover:bg-[#0062AD] text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full flex items-center gap-1 sm:gap-1.5 shadow-sm shadow-blue-500/20 hover:shadow-md hover:shadow-blue-500/30 transition-all cursor-pointer"
           >
-            <i data-lucide="send" class="w-3.5 h-3.5"></i>
-            <span>Cotizar</span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-
-        <!-- ======================================================================= -->
-        <!-- 6. CONTROLES MÓVILES (< 768px)                                          -->
-        <!-- ======================================================================= -->
-        <div class="flex items-center gap-2 md:hidden">
-          <!-- Botón Rápido Cotizar -->
-          <a 
-            href="https://www.gaducompany.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="px-3.5 py-1.5 rounded-full bg-[#0078D4] text-white text-xs font-bold flex items-center gap-1 shadow-sm"
-          >
+            <i data-lucide="send" class="w-3.5 h-3.5 hidden xs:inline-block"></i>
             <span>Cotizar</span>
             <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </a>
 
-          <!-- Botón Hamburguesa -->
+          <!-- Botón Hamburguesa - Visible en Móviles y Tablets (< 1024px / lg:hidden) -->
           <button 
             type="button" 
             (click)="alternarMenuMovil()"
-            class="p-2 rounded-full bg-slate-100 text-slate-700 hover:text-[#0078D4] focus:outline-none cursor-pointer"
-            aria-label="Alternar Menú"
+            class="lg:hidden p-2 rounded-full bg-slate-100 text-slate-700 hover:text-[#0078D4] focus:outline-none cursor-pointer transition-colors"
+            aria-label="Alternar Menú de Navegación"
           >
             <i [attr.data-lucide]="menuMovilAbierto() ? 'x' : 'menu'" class="w-5 h-5"></i>
           </button>
@@ -250,16 +234,18 @@ import { inicializarIconosLucide } from '../../comun/lucide';
 
       </div>
 
-      <!-- Panel Desplegable Móvil -->
+      <!-- ======================================================================= -->
+      <!-- 4. PANEL DESPLEGABLE MÓVIL Y TABLET (< 1024px)                          -->
+      <!-- ======================================================================= -->
       @if (menuMovilAbierto()) {
-        <div class="lg:hidden mt-2 max-w-[1360px] mx-auto bg-white/98 backdrop-blur-md rounded-3xl border border-slate-200/90 p-4 space-y-3 shadow-2xl">
+        <div class="lg:hidden mt-2.5 max-w-[1360px] mx-auto bg-white/98 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-slate-200/90 p-3 sm:p-5 space-y-3 shadow-2xl transition-all">
           <div class="flex flex-col gap-1">
             <a 
               routerLink="/" 
               (click)="cerrarMenuMovil()"
               routerLinkActive="bg-sky-50 text-[#0078D4] font-bold" 
               [routerLinkActiveOptions]="{ exact: true }"
-              class="px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
+              class="px-3.5 py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
             >
               <i data-lucide="home" class="w-4 h-4 text-[#0078D4]"></i>
               <span>Inicio Corporativo</span>
@@ -269,62 +255,74 @@ import { inicializarIconosLucide } from '../../comun/lucide';
               href="https://www.gaducompany.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
+              class="px-3.5 py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
             >
               <i data-lucide="laptop" class="w-4 h-4 text-[#0078D4]"></i>
-              <span>GADU Tech (Cloud & POS)</span>
+              <div class="flex flex-col">
+                <span>GADU Tech</span>
+                <span class="text-[10px] text-slate-400 font-normal">Cloud, Infraestructura y POS</span>
+              </div>
             </a>
 
             <a 
               href="https://www.gaduapp.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
+              class="px-3.5 py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
             >
               <i data-lucide="box" class="w-4 h-4 text-[#0369A1]"></i>
-              <span>GADU Commerce (B2B & Gaming)</span>
+              <div class="flex flex-col">
+                <span>GADU Commerce</span>
+                <span class="text-[10px] text-slate-400 font-normal">Hardware Corporativo & Tienda B2B</span>
+              </div>
             </a>
 
             <a 
               href="https://www.gaducompany.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
+              class="px-3.5 py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
             >
               <i data-lucide="graduation-cap" class="w-4 h-4 text-[#7E22CE]"></i>
-              <span>GADU Coach (Capacitación & Cultura)</span>
+              <div class="flex flex-col">
+                <span>GADU Coach</span>
+                <span class="text-[10px] text-slate-400 font-normal">Capacitación y Cultura Digital</span>
+              </div>
             </a>
 
             <a 
               routerLink="/monitor" 
               (click)="cerrarMenuMovil()"
               routerLinkActive="bg-sky-50 text-[#0078D4] font-bold"
-              class="px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
+              class="px-3.5 py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2.5 hover:bg-slate-50"
             >
               <i data-lucide="activity" class="w-4 h-4 text-[#0078D4]"></i>
-              <span>Monitor de Salud y Nodos</span>
+              <div class="flex flex-col">
+                <span>Monitor de Salud y Nodos</span>
+                <span class="text-[10px] text-slate-400 font-normal">Telemetría y Estado de Microfrontends</span>
+              </div>
             </a>
           </div>
 
-          <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+          <div class="pt-3 border-t border-slate-100 flex flex-col sm:flex-row gap-2">
             <a 
               href="https://www.gaduapp.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="w-full py-2.5 px-3.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs sm:text-sm font-bold flex items-center justify-center gap-2"
+              class="flex-1 py-2.5 px-3.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 hover:bg-emerald-100 transition-colors"
             >
               <i data-lucide="shopping-cart" class="w-4 h-4 text-emerald-600"></i>
-              <span>Ir a Tienda GADU App (www.gaduapp.com)</span>
+              <span>Tienda www.gaduapp.com</span>
             </a>
 
             <a 
               href="https://www.gaducompany.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="w-full py-2.5 px-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-colors"
+              class="flex-1 py-2.5 px-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-colors"
             >
               <i data-lucide="lock" class="w-4 h-4 text-slate-600"></i>
-              <span>Consola Intranet Colaboradores</span>
+              <span>Intranet Colaboradores</span>
             </a>
           </div>
         </div>

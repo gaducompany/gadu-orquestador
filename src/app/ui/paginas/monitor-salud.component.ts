@@ -144,13 +144,13 @@ interface EstadoServicio {
                     {{ serv.tipo }}
                   </span>
                 </div>
-                <p class="text-slate-600 font-mono text-[11px]">{{ serv.url }}</p>
+                <p class="text-slate-600 font-mono text-[11px] break-all sm:break-normal">{{ serv.url }}</p>
                 <p class="text-slate-400 text-[11px]">{{ serv.detalles }}</p>
               </div>
 
-              <div class="flex items-center gap-6 self-end sm:self-center">
-                <div class="text-right">
-                  <span class="block text-slate-400 text-[10px] flex items-center justify-end gap-1">
+              <div class="flex items-center justify-between sm:justify-end gap-4 sm:gap-6 w-full sm:w-auto pt-2 sm:pt-0 border-t border-slate-50 sm:border-0">
+                <div class="text-left sm:text-right">
+                  <span class="text-slate-400 text-[10px] flex items-center sm:justify-end gap-1">
                     <i data-lucide="zap" class="w-3 h-3 text-[#0078D4]"></i>
                     <span>Latencia</span>
                   </span>

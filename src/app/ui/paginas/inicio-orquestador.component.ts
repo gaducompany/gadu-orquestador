@@ -40,21 +40,21 @@ import { BandaClientesOrquestadorComponent } from '../comun/banda-clientes-orque
             </div>
 
             <!-- Titular de Gran Impacto -->
-            <h1 class="text-3xl sm:text-5xl lg:text-[44px] xl:text-[48px] font-black text-slate-900 tracking-tight leading-[1.15]">
+            <h1 class="text-2xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-black text-slate-900 tracking-tight leading-[1.15]">
               Orquestación inteligente para el 
               <span class="text-[#0078D4]">ecosistema tecnológico</span> de GADU Company
             </h1>
 
             <!-- Párrafo Descriptivo -->
-            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+            <p class="text-sm sm:text-lg text-slate-600 leading-relaxed max-w-xl">
               Plataforma Shell federada que integra y supervisa nuestras aplicaciones independientes: la tienda virtual <strong>www.gaduapp.com</strong>, el portal institucional <strong>www.gaducompany.com</strong>, el sistema POS y los microservicios backend.
             </p>
 
             <!-- Botones Principales de Llamado a la Acción -->
-            <div class="pt-2 flex flex-wrap items-center gap-3">
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <a 
                 routerLink="/tienda"
-                class="px-6 sm:px-7 py-3.5 rounded-xl bg-[#0078D4] hover:bg-[#0062AD] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                class="px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-[#0078D4] hover:bg-[#0062AD] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
               >
                 <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                 <span>Abrir Tienda GADU Commerce</span>
@@ -62,7 +62,7 @@ import { BandaClientesOrquestadorComponent } from '../comun/banda-clientes-orque
 
               <a 
                 routerLink="/monitor"
-                class="px-5 sm:px-6 py-3.5 rounded-xl bg-white/90 backdrop-blur-sm hover:bg-white text-slate-700 font-bold text-xs uppercase tracking-wider border border-slate-300 shadow-xs hover:border-slate-400 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                class="px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/90 backdrop-blur-sm hover:bg-white text-slate-700 font-bold text-xs uppercase tracking-wider border border-slate-300 shadow-xs hover:border-slate-400 transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
               >
                 <i data-lucide="activity" class="w-4 h-4 text-[#0078D4]"></i>
                 <span>Monitor de Salud y Nodos</span>
@@ -93,51 +93,51 @@ import { BandaClientesOrquestadorComponent } from '../comun/banda-clientes-orque
       <!-- 2. MÉTRICAS DE OBSERVABILIDAD Y RENDIMIENTO                               -->
       <!-- ========================================================================= -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div class="panel-cristal panel-cristal-hover rounded-2xl p-6 text-center space-y-1">
-            <div class="text-3xl sm:text-4xl font-black text-[#0078D4] tracking-tight">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div class="panel-cristal panel-cristal-hover rounded-2xl p-4 sm:p-6 text-center space-y-1">
+            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0078D4] tracking-tight">
               99.98%
             </div>
             <div class="text-xs sm:text-sm font-bold text-slate-900">
               Disponibilidad SLA
             </div>
-            <p class="text-[11px] text-slate-500 leading-tight">
+            <p class="text-[10px] sm:text-[11px] text-slate-500 leading-tight">
               Infraestructura distribuida en Vercel Edge Network
             </p>
           </div>
 
-          <div class="panel-cristal panel-cristal-hover rounded-2xl p-6 text-center space-y-1">
-            <div class="text-3xl sm:text-4xl font-black text-[#0078D4] tracking-tight">
+          <div class="panel-cristal panel-cristal-hover rounded-2xl p-4 sm:p-6 text-center space-y-1">
+            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0078D4] tracking-tight">
               ~12 ms
             </div>
             <div class="text-xs sm:text-sm font-bold text-slate-900">
               Latencia Media
             </div>
-            <p class="text-[11px] text-slate-500 leading-tight">
+            <p class="text-[10px] sm:text-[11px] text-slate-500 leading-tight">
               Enrutamiento reactivo de alto rendimiento
             </p>
           </div>
 
-          <div class="panel-cristal panel-cristal-hover rounded-2xl p-6 text-center space-y-1">
-            <div class="text-3xl sm:text-4xl font-black text-[#0078D4] tracking-tight">
+          <div class="panel-cristal panel-cristal-hover rounded-2xl p-4 sm:p-6 text-center space-y-1">
+            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0078D4] tracking-tight">
               4 Módulos
             </div>
             <div class="text-xs sm:text-sm font-bold text-slate-900">
               Microfrontends Federados
             </div>
-            <p class="text-[11px] text-slate-500 leading-tight">
+            <p class="text-[10px] sm:text-[11px] text-slate-500 leading-tight">
               Desacoplados con ciclo de vida y CI/CD autónomo
             </p>
           </div>
 
-          <div class="panel-cristal panel-cristal-hover rounded-2xl p-6 text-center space-y-1">
-            <div class="text-3xl sm:text-4xl font-black text-emerald-600 tracking-tight">
+          <div class="panel-cristal panel-cristal-hover rounded-2xl p-4 sm:p-6 text-center space-y-1">
+            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-emerald-600 tracking-tight">
               0 ms
             </div>
             <div class="text-xs sm:text-sm font-bold text-slate-900">
               Sobrecarga Zone.js
             </div>
-            <p class="text-[11px] text-slate-500 leading-tight">
+            <p class="text-[10px] sm:text-[11px] text-slate-500 leading-tight">
               Reactividad de grano fino con Signals en Angular 20
             </p>
           </div>
@@ -412,8 +412,8 @@ import { BandaClientesOrquestadorComponent } from '../comun/banda-clientes-orque
       <!-- 5. RESUMEN DE ARQUITECTURA ENTERPRISE (AZURE LIGHT THEME)                  -->
       <!-- ========================================================================= -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="panel-cristal rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div class="panel-cristal rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
             <div class="space-y-1">
               <span class="px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-blue-50 text-[#0078D4] border border-blue-200">
                 Estándares Técnicos
