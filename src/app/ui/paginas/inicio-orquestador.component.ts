@@ -16,7 +16,7 @@ import { BandaClientesOrquestadorComponent } from '../comun/banda-clientes-orque
       <!-- ========================================================================= -->
       <!-- 1. HERO PRINCIPAL CORPORATIVO GADU COMPANY                                -->
       <!-- ========================================================================= -->
-      <section class="relative w-full overflow-hidden bg-white border-b border-slate-200/80 min-h-[500px] lg:min-h-[560px] flex items-center">
+      <section class="relative w-full overflow-hidden bg-white border-b border-slate-200/80 min-h-[520px] lg:min-h-[580px] flex items-center -mt-[92px] sm:-mt-[104px] pt-[104px] sm:pt-[120px]">
         <!-- Imagen de Fondo Corporativa a Ancho Completo con Gradiente Oficial -->
         <div class="absolute inset-0 w-full h-full pointer-events-none">
           <img 
