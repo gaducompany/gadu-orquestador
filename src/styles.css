@@ -1,5 +1,103 @@
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+/* ==========================================================================
+   GADU ORQUESTADOR — SISTEMA DE ESTILOS GLOBALES (AZURE LIGHT THEME GADU)
+   ========================================================================== */
+
+:root {
+  --gadu-azure: #0078D4;
+  --gadu-azure-hover: #0062AD;
+  --gadu-azure-suave: #EFF6FF;
+  --gadu-azure-borde: #BFDBFE;
+  
+  --gadu-slate-fondo: #F8FAFC;
+  --gadu-superficie: #FFFFFF;
+  
+  --gadu-texto-titular: #0F172A;
+  --gadu-texto-cuerpo: #334155;
+  --gadu-texto-secundario: #64748B;
+  --gadu-borde: #E2E8F0;
+  
+  --gadu-esmeralda: #059669;
+  --gadu-tech-cyan: #0284C7;
+  --gadu-coach-violeta: #7E22CE;
 }
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--gadu-texto-cuerpo);
+  background-color: #F8FAFC;
+}
+
+/* Scrollbar Personalizado Corporativo */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gadu-azure);
+}
+
+/* Malla de Fondo Sutil Azure Light */
+.malla-fondo-azure {
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(0, 120, 212, 0.05) 0px, transparent 60%),
+    radial-gradient(at 85% 20%, rgba(2, 132, 199, 0.04) 0px, transparent 60%),
+    radial-gradient(at 50% 85%, rgba(15, 23, 42, 0.03) 0px, transparent 60%),
+    radial-gradient(at 90% 85%, rgba(0, 120, 212, 0.04) 0px, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Paneles de Cristal (Light Glassmorphism) */
+.panel-cristal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+}
+
+.panel-cristal-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel-cristal-hover:hover {
+  background: #FFFFFF;
+  border-color: #CBD5E1;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.08);
+}
+
+/* Animación de Marquee Infinito para Logos */
+@keyframes marquesina-desplazamiento {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animacion-marquesina {
+  display: flex;
+  width: max-content;
+  animation: marquesina-desplazamiento 30s linear infinite;
+}
+
+.animacion-marquesina:hover {
+  animation-play-state: paused;
+}
+
+/* Mascara de Desvanecimiento Lateral */
+.mascara-desvanecimiento-x {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+
