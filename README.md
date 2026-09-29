@@ -23,26 +23,27 @@ El orquestador actúa como la aplicación base unificada que coordina, aloja y s
 
 ---
 
-## Topología del Ecosistema y Puertos Locales
+## Topología del Ecosistema y Despliegues
 
-Asignación oficial de puertos para el desarrollo local coordinado del ecosistema GADU:
+Matriz oficial de infraestructura, repositorios y dominios del ecosistema tecnológico GADU:
 
-| Aplicación / Servicio | Repositorio / Proyecto | Puerto Local | Dominio Producción | Descripción |
-| :--- | :--- | :---: | :---: | :--- |
-| **GADU Orquestador** | `gadu-orquestador` | **`4200`** | `https://hub.gaducompany.com` | Shell / Host principal de microfrontends y telemetría |
-| **GADU Company Portal** | `gadu-company-portal-v2` | **`4201`** | `https://www.gaducompany.com` | Portal institucional corporativo (Tech, Commerce B2B, Coach) |
-| **GADU App Commerce** | `gadu-app-commerce-v2` | **`4202`** | `https://www.gaduapp.com` | Tienda virtual, catálogo de productos, carrito y pasarela |
-| **API Gateway & Microservicios** | `gadu-backend-api` | **`4000`** | `https://api.gaducompany.com` | Minimal APIs + Express (Productos, Envíos, Pagos Bold) |
-| **PostgreSQL Database** | Instancia Local / Docker | **`5432`** | `db.gaducompany.com` | Base de datos relacional transaccional y catálogo |
-| **Redis Pub/Sub & SSE** | Instancia Local / Docker | **`6379`** | `redis.gaducompany.com` | Mensajería reactiva para eventos y stock en vivo |
+| Aplicación / Servicio | Repositorio GitHub | Puerto Local | Dominio Producción | Espejo Vercel | Descripción |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **GADU Orquestador** | `gaducompany/gadu-orquestador` | **`4200`** | `https://gadu-orquestador.vercel.app` | `gadu-orquestador.vercel.app` | Shell / Host central de microfrontends y telemetría |
+| **GADU Company Portal** | `gaducompany/gadu-company` | **`4201`** | **`https://www.gaducompany.com`** | `gadu-company.vercel.app` | Portal institucional corporativo y portafolio de servicios |
+| **GADU App Commerce** | `gaducompany/gadu-app-commerce` | **`4202`** | **`https://www.gaduapp.com`** | `gadu-app-commerce.vercel.app` | Tienda virtual tecnológica, checkout y pasarela Bold |
+| **GADU POS System** | `gaducompany/gadu-pos-system` | **`4203`** | `https://gadu-pos-system.vercel.app` | `gadu-pos-system.vercel.app` | Sistema de punto de venta, inventario en mostrador y facturación |
+| **API Gateway & Microservicios** | `gaducompany/gadu-backend-api` | **`4000`** | `https://api.gaducompany.com` | - | Minimal APIs + Express (Catálogo, Envíos, Pagos Bold) |
+| **PostgreSQL Database** | Repositorio Privado / Docker | **`5432`** | `db.gaducompany.com` | - | Base de datos relacional y catálogo de inventario |
+| **Redis Pub/Sub & SSE** | Repositorio Privado / Docker | **`6379`** | `redis.gaducompany.com` | - | Canales reactivos en tiempo real para eventos de stock |
 
 ---
 
 ## Módulos y Rutas en el Orquestador
 
-- **`/` (Inicio / Hub Central):** Tablero principal con catálogo de microfrontends activos, estado operativo y acceso directo a dominios.
-- **`/tienda` (Contenedor E-Commerce):** Integración embebida y controlada de **GADU App Commerce** (`http://localhost:4202`) con funciones de recarga y enlace a dominio autónomo.
-- **`/monitor` (Monitor de Salud):** Tablero de observabilidad en tiempo real con métricas de latencia, disponibilidad de nodos HTTP, base de datos y canal SSE.
+- **`/` (Inicio / Hub Central):** Tablero principal con catálogo de microfrontends activos, estado operativo en tiempo real y enlaces directos tanto a dominios de producción como a espejos de Vercel.
+- **`/tienda` (Contenedor E-Commerce):** Integración embebida y controlada de **GADU App Commerce** con selector dinámico de entorno (`www.gaduapp.com`, espejo en Vercel o desarrollo local `:4202`), recarga de marco y apertura externa.
+- **`/monitor` (Monitor de Salud):** Tablero de observabilidad en tiempo real con telemetría de latencias, disponibilidad de nodos HTTP en la nube y servicios de persistencia.
 
 ---
 

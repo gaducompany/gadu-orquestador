@@ -27,13 +27,21 @@ import { inicializarIconosLucide } from '../../comun/lucide';
           </h1>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Plataforma modular con arquitectura federada que coordina aplicaciones independientes: la tienda virtual <strong>www.gaduapp.com</strong>, el portal institucional <strong>www.gaducompany.com</strong> y los microservicios backend.
+            Plataforma modular con arquitectura federada que coordina aplicaciones independientes: la tienda virtual <strong>www.gaduapp.com</strong>, el portal institucional <strong>www.gaducompany.com</strong>, el sistema de punto de venta y los microservicios backend.
           </p>
 
-          <div class="pt-4 flex flex-wrap items-center gap-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Dominio Cloud Oficial:</span>
+            <a href="https://gadu-orquestador.vercel.app" target="_blank" class="font-mono font-bold text-blue-400 hover:underline">
+              gadu-orquestador.vercel.app
+            </a>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
             <a 
               routerLink="/tienda" 
-              class="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl text-xs font-bold shadow-lg shadow-blue-600/30 transition-all flex items-center gap-2">
+              class="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl text-xs font-bold shadow-lg shadow-blue-600/30 transition-all flex items-center gap-2 cursor-pointer">
               <i data-lucide="shopping-bag" class="w-4 h-4"></i>
               <span>Abrir Tienda GADU Commerce</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -41,7 +49,7 @@ import { inicializarIconosLucide } from '../../comun/lucide';
 
             <a 
               routerLink="/monitor" 
-              class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-2xl text-xs font-bold border border-slate-700 transition-all flex items-center gap-2">
+              class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-2xl text-xs font-bold border border-slate-700 transition-all flex items-center gap-2 cursor-pointer">
               <i data-lucide="activity" class="w-4 h-4"></i>
               <span>Ver Monitor de Salud y Métricas</span>
             </a>
@@ -66,7 +74,7 @@ import { inicializarIconosLucide } from '../../comun/lucide';
           </span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           @for (mfe of servicioOrquestador.microfrontends(); track mfe.id) {
             <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
               <div>
@@ -77,8 +85,10 @@ import { inicializarIconosLucide } from '../../comun/lucide';
                       <i data-lucide="shopping-bag" class="w-6 h-6 text-blue-600"></i>
                     } @else if (mfe.id === 'gadu-company-portal') {
                       <i data-lucide="building-2" class="w-6 h-6 text-indigo-600"></i>
+                    } @else if (mfe.id === 'gadu-pos-system') {
+                      <i data-lucide="receipt" class="w-6 h-6 text-emerald-600"></i>
                     } @else {
-                      <i data-lucide="server" class="w-6 h-6 text-emerald-600"></i>
+                      <i data-lucide="server" class="w-6 h-6 text-purple-600"></i>
                     }
                   </div>
                   <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -92,11 +102,25 @@ import { inicializarIconosLucide } from '../../comun/lucide';
 
                 <!-- Especificaciones Técnicas -->
                 <div class="space-y-1.5 py-3 border-t border-slate-100 text-[11px]">
-                  <div class="flex justify-between">
-                    <span class="text-slate-400">Dominio Producción:</span>
-                    <span class="font-mono font-semibold text-slate-700">{{ mfe.dominioProduccion }}</span>
+                  <div class="flex justify-between items-center gap-2">
+                    <span class="text-slate-400">Producción:</span>
+                    <a [href]="mfe.dominioProduccion" target="_blank" class="font-mono font-semibold text-blue-700 hover:underline truncate">
+                      {{ mfe.dominioProduccion.replace('https://', '') }}
+                    </a>
                   </div>
-                  <div class="flex justify-between">
+                  @if (mfe.dominioVercel) {
+                    <div class="flex justify-between items-center gap-2">
+                      <span class="text-slate-400">Vercel:</span>
+                      <a [href]="mfe.dominioVercel" target="_blank" class="font-mono text-slate-600 hover:underline truncate">
+                        {{ mfe.dominioVercel.replace('https://', '') }}
+                      </a>
+                    </div>
+                  }
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-400">Dev Local:</span>
+                    <span class="font-mono font-semibold text-slate-700">{{ mfe.urlDesarrollo.replace('http://localhost', ':') }}</span>
+                  </div>
+                  <div class="flex justify-between items-center">
                     <span class="text-slate-400">Versión:</span>
                     <span class="font-mono font-semibold text-blue-600">{{ mfe.version }}</span>
                   </div>
@@ -118,7 +142,7 @@ import { inicializarIconosLucide } from '../../comun/lucide';
                     rel="noopener noreferrer"
                     class="flex-1 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold text-center transition-colors flex items-center justify-center gap-1.5">
                     <i data-lucide="globe" class="w-3.5 h-3.5"></i>
-                    <span>Visitar Aplicación</span>
+                    <span>Visitar Web</span>
                   </a>
                 }
 

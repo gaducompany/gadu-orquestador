@@ -9,7 +9,9 @@ export interface Microfrontend {
   nombre: string;
   descripcion: string;
   dominioProduccion: string;
+  dominioVercel?: string;
   urlDesarrollo: string;
+  repositorio?: string;
   rutaEnOrquestador: string;
   icono: string;
   estado: EstadoMicrofrontend;

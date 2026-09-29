@@ -65,20 +65,43 @@ import { inicializarIconosLucide } from '../../comun/lucide';
           </a>
         </nav>
 
-        <!-- Indicador de Microfrontend Activo -->
-        <div class="hidden sm:flex items-center gap-3">
-          <div class="text-right">
-            <span class="block text-[10px] text-slate-400 uppercase font-semibold">Microfrontend Seleccionado</span>
-            <span class="block text-xs font-bold text-white">{{ servicioOrquestador.microfrontendActivo().nombre }}</span>
-          </div>
+        <!-- Acceso Directo y Estado de Entorno -->
+        <div class="hidden md:flex items-center gap-2">
+          <!-- Indicador de Entorno -->
+          @if (servicioOrquestador.esEntornoNube()) {
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-950/80 text-emerald-400 border border-emerald-800/80">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Vercel Cloud</span>
+            </span>
+          } @else {
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              <span>Local :4200</span>
+            </span>
+          }
 
+          <!-- Botón Directo Portal GADU Company -->
           <a 
-            [href]="servicioOrquestador.microfrontendActivo().dominioProduccion" 
+            href="https://www.gaducompany.com" 
             target="_blank"
             rel="noopener noreferrer"
-            title="Abrir en dominio independiente www.gaduapp.com"
-            class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700 flex items-center justify-center">
-            <i data-lucide="external-link" class="w-4 h-4"></i>
+            title="Abrir portal oficial www.gaducompany.com"
+            class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700 text-[11px] font-semibold flex items-center gap-1.5">
+            <i data-lucide="building-2" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>gaducompany.com</span>
+            <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+          </a>
+
+          <!-- Botón Directo GADU App Commerce -->
+          <a 
+            href="https://www.gaduapp.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir tienda oficial www.gaduapp.com"
+            class="px-2.5 py-1.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-white transition-colors border border-blue-500/30 text-[11px] font-semibold flex items-center gap-1.5">
+            <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-blue-400"></i>
+            <span>gaduapp.com</span>
+            <i data-lucide="external-link" class="w-3 h-3 text-blue-400"></i>
           </a>
         </div>
 

@@ -182,44 +182,60 @@ export class MonitorSaludComponent {
 
   public readonly servicios = signal<EstadoServicio[]>([
     {
+      nombre: 'GADU Orquestador (Host Shell)',
+      tipo: 'Microfrontend',
+      url: 'https://gadu-orquestador.vercel.app (Local :4200)',
+      estado: 'saludable',
+      latenciaMs: 8,
+      detalles: 'Shell Central Angular 20 Zoneless desplegado en Vercel Edge Network'
+    },
+    {
       nombre: 'GADU App Commerce v2',
       tipo: 'Microfrontend',
-      url: 'http://localhost:4202 / www.gaduapp.com',
+      url: 'https://www.gaduapp.com (Vercel / Local :4202)',
       estado: 'saludable',
       latenciaMs: 12,
-      detalles: 'Angular 20 Standalone Zoneless con Signals y Paginación Progresiva'
+      detalles: 'Tienda virtual de tecnología con checkout Bold, signals y paginación progresiva'
+    },
+    {
+      nombre: 'GADU Company Portal',
+      tipo: 'Microfrontend',
+      url: 'https://www.gaducompany.com (Vercel / Local :4201)',
+      estado: 'saludable',
+      latenciaMs: 14,
+      detalles: 'Portal institucional corporativo con portafolio de servicios B2B'
+    },
+    {
+      nombre: 'GADU POS System',
+      tipo: 'Microfrontend',
+      url: 'https://gadu-pos-system.vercel.app (Local :4203)',
+      estado: 'saludable',
+      latenciaMs: 15,
+      detalles: 'Sistema de Punto de Venta, facturación electrónica y gestión en mostrador'
     },
     {
       nombre: 'GADU API Gateway',
       tipo: 'API REST',
-      url: 'http://localhost:4000/api',
+      url: 'https://api.gaducompany.com (Local :4000)',
       estado: 'saludable',
-      latenciaMs: 24,
+      latenciaMs: 22,
       detalles: 'Minimal APIs + Express / Enrutamiento de Productos, Envíos y Pagos Bold'
     },
     {
       nombre: 'PostgreSQL Database & Inventario',
       tipo: 'Base de Datos',
-      url: 'postgres://localhost:5432/gadu_portal',
+      url: 'postgres://db.gaducompany.com:5432/gadu_portal',
       estado: 'saludable',
-      latenciaMs: 8,
-      detalles: 'Pool de conexiones optimizado con persistencia de transacciones'
+      latenciaMs: 7,
+      detalles: 'Pool de conexiones transaccionales y catálogo sincronizado'
     },
     {
       nombre: 'Redis Pub/Sub & Canales SSE',
       tipo: 'Mensajería Pub/Sub',
-      url: 'redis://localhost:6379',
+      url: 'redis://redis.gaducompany.com:6379',
       estado: 'saludable',
       latenciaMs: 4,
-      detalles: 'Transmisión unidireccional reactiva para actualización de stock en vivo'
-    },
-    {
-      nombre: 'GADU Company Portal',
-      tipo: 'Microfrontend',
-      url: 'http://localhost:4201 / www.gaducompany.com',
-      estado: 'saludable',
-      latenciaMs: 16,
-      detalles: 'Portal institucional corporativo'
+      detalles: 'Transmisión reactiva de eventos y actualización de stock en tiempo real'
     }
   ]);
 
